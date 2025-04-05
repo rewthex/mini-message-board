@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font-family: "Tektur", sans-serif;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  background: black;
+  margin: 2rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+li {
+  list-style: none;
+}
+
+.user, .date {
+  text-align: end;
+}
+
+a {
+  text-decoration: none;
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #000;
+    background-color: #8bdc00;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px  #7ac70c;
+}
+
+a:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+.active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+header {
+  max-width: 80%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+form, main {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: hsl(0, 0%, 100%);
+  border: 3px solid black;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+button {
+  width: 100%;
+  text-align: center;
+  background-color: #8bdc00;
+
+}

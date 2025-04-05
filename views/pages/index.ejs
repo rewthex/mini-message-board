@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>|\/|3554935</title>
-</head>
-<body>
-  <%- include('../partials/header') %>
-  <% for(const message of messages) { %>
-    <ul>
-      <li>
-        <%= message.text %>
-      </li>
-      <li>
-        <%= message.user %>
-      </li>
-      <li>
-        <%= message.added %>
-      </li>
-    </ul>
-  <% } %>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>|\/|3554935</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <main class="messages">
+      <% for(const message of messages) { %>
+      <ul>
+        <li><%= message.text %></li>
+        <li class="user">-<%= message.user %></li>
+        <li class="date"><%= message.added %></li>
+      </ul>
+      <% } %>
+    </main>
+  </body>
 </html>
