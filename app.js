@@ -23,6 +23,10 @@ app.use(express.static("public"));
 app.use(indexRouter);
 app.use(newRouter);
 
+// Error handling
+app.use((err, req, res, next) => {
+  res.redirect("/");
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
