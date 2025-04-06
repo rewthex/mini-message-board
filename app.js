@@ -10,7 +10,7 @@ const app = express();
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  limit: 15,
+  limit: 16,
   message: "7h3 m4ch1n35 423 11573n1n9...",
 });
 
@@ -25,8 +25,10 @@ app.use(logger);
 // Body parser middleware
 app.use(express.urlencoded({ extended: false }));
 
-// Setup static folder
-app.use(express.static("public"));
+// Cache styles
+app.use('/styles.css', express.static('public/styles.css', {
+  maxAge: '1y'
+}));
 
 // Routers
 app.use(indexRouter);
