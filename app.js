@@ -16,6 +16,8 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
+app.set("trust proxy", true);
+
 // EJS setup
 app.set("view engine", "ejs");
 
@@ -26,9 +28,12 @@ app.use(logger);
 app.use(express.urlencoded({ extended: false }));
 
 // Cache styles
-app.use('/styles.css', express.static('public/styles.css', {
-  maxAge: '1y'
-}));
+app.use(
+  "/styles.css",
+  express.static("public/styles.css", {
+    maxAge: "1y",
+  })
+);
 
 // Routers
 app.use(indexRouter);

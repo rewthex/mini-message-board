@@ -15,7 +15,7 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "start": "node --watch app"
+    "start": "node app"
   },
   "dependencies": {
     "colors": "^1.4.0",
