@@ -44,7 +44,7 @@ const messages = [
 ];
 
 export function getMessages() {
-  return messages;
+  return messages.sort((a, b) => new Date(b.added) - new Date(a.added));
 }
 
 export function getMessageById(id) {
