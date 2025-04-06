@@ -9,15 +9,11 @@
   <body>
     <%- include('../partials/header') %>
     <main class="messages">
-      <% for(const message of messages) { %>
-      <a href="/message/<%= message.id %>">
-        <ul>
-          <li class="text"><%= message.text %></li>
-          <li class="user">-<%= message.user %></li>
-          <li class="date"><%= message.added %></li>
-        </ul>
-      </a>
-      <% } %>
+      <ul>
+        <li class="text"><%= message.text %></li>
+        <li class="user">-<%= message.user %></li>
+        <li class="date"><%= message.added %></li>
+      </ul>
     </main>
   </body>
 </html>

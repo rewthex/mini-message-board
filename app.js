@@ -16,12 +16,13 @@ app.use(logger);
 // Body parser middleware
 app.use(express.urlencoded({ extended: false }));
 
+// Setup static folder
+app.use(express.static("public"));
+
 // Routers
 app.use(indexRouter);
 app.use(newRouter);
 
-// Setup static folder
-app.use(express.static("public"));
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
