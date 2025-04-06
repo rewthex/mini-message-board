@@ -2,10 +2,19 @@ import express from "express";
 import logger from "./middleware/logger.js";
 import indexRouter from "./routes/indexRouter.js";
 import newRouter from "./routes/newRouter.js";
+import { rateLimit } from "express-rate-limit";
 
 const PORT = process.env.port || 8080;
 
 const app = express();
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 15,
+  message: "7h3 m4ch1n35 423 11573n1n9...",
+});
+
+app.use(limiter);
 
 // EJS setup
 app.set("view engine", "ejs");
