@@ -16,8 +16,6 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
-app.set("trust proxy", true);
-
 // EJS setup
 app.set("view engine", "ejs");
 
