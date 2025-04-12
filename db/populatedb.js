@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS messages (
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   text VARCHAR ( 255 ),
   "user" VARCHAR ( 255 ),
-  added DATE
+  added TEXT
 );
 
 INSERT INTO messages (text, "user", added)

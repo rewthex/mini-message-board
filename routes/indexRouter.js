@@ -6,7 +6,9 @@ const indexRouter = Router();
 indexRouter.get("/", async (req, res) => {
   const messages = await db.getAllMessages();
   messages.sort((a, b) => b.added - a.added);
-
+  messages.forEach((msg) => {
+    msg.added = new Date(msg.added).toISOString().split("T")[0];
+  });
   res.render("pages/index", { messages, activeButton: "messages" });
 });
 
