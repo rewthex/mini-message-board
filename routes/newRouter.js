@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { addMessage } from "../db.js";
+import db from "../db/queries.js";
 
 const newRouter = Router();
 
@@ -7,9 +7,9 @@ newRouter.get("/new", (req, res) => {
   res.render("pages/new", { activeButton: "newMessage" });
 });
 
-newRouter.post("/new", (req, res) => {
+newRouter.post("/new", async (req, res) => {
   const { user, text } = req.body;
-  addMessage(user, text);
+  await db.addMessage(user, text);
   res.redirect("/");
 });
 
